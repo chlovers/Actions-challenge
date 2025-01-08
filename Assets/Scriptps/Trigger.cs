@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Trigger : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Trigger : MonoBehaviour
         {
            Debug.Log("was triggered properly in trigger script");
             
-            Actions.innet(); // when the puck enters the net 
+            Actions.score(); // when the puck enters the net 
 
             
         }
@@ -27,6 +28,7 @@ public class Trigger : MonoBehaviour
         }
 
     }
+
 
 
 }

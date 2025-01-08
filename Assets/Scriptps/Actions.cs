@@ -12,17 +12,4 @@ public static class Actions
 
 
 
-    public static void innet()
-    {
-        score?.Invoke();  // invoking the action 
-
-        Debug.Log("was triggered right in actions sript");
-    }
-
-  
-    public static void outofnet()
-    {
-        turneverythingoff?.Invoke();
-
-    }
 }

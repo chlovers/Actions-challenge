@@ -12,6 +12,7 @@ public class hud : MonoBehaviour
     void Start()
     {
         goals = 0; // setting the score to 0
+        displayscore.text = "Goals: " + goals;  // display the score
     }
 
     private void OnEnable()
