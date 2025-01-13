@@ -20,12 +20,12 @@ public class BridgeControl : MonoBehaviour
 
     private void moveup()
     {
-        Bridge.transform.position = new Vector3(Bridge.transform.position.x, Bridge.transform.position.y, Bridge.transform.position.z + 1);
+        Bridge.transform.position = new Vector3(Bridge.transform.position.x, Bridge.transform.position.y + 1, Bridge.transform.position.z);
     }
 
     private void movedown()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
+        transform.position = new Vector3(transform.position.x, transform.position.y- 1, transform.position.z);
     }
 
 }
