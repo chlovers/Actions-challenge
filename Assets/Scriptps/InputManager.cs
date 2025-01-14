@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour, Controls.IGameplayActions
+public class InputManager : MonoBehaviour, Controls.IGameplayActions //grabbing the inputaction script
 {
     private Controls control;
 
@@ -12,12 +12,12 @@ public class InputManager : MonoBehaviour, Controls.IGameplayActions
     {
 
         control = new Controls();
-        control.Gameplay.Enable();
+        control.Gameplay.Enable();  //enabling it 
         control.Gameplay.SetCallbacks(this);
 
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump(InputAction.CallbackContext context)  // invoing my actions when space is pressed held and let go 
     {
         if (context.started)
         {
@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour, Controls.IGameplayActions
 
 
 
-    public void OnUp(InputAction.CallbackContext context)
+    public void OnUp(InputAction.CallbackContext context)   // invoking action when W is pressed
     {
         if(context.performed)
         {
@@ -46,12 +46,25 @@ public class InputManager : MonoBehaviour, Controls.IGameplayActions
         }
     }
 
-    public void OnDown(InputAction.CallbackContext context)
+    public void OnDown(InputAction.CallbackContext context)  // invoking action when S is pressed 
     {
         if (context.performed)
         {
             InputActions.BridgeDown?.Invoke();
 
+        }
+    }
+
+    public void OnHonk(InputAction.CallbackContext context) // invoking action when E is pressed and let go
+    {
+       if (context.performed)
+        {
+            InputActions.Epress?.Invoke();
+        }
+
+       if (context.canceled)
+        {
+            InputActions.Estop?.Invoke();
         }
     }
 }

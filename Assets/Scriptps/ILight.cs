@@ -10,13 +10,13 @@ public class ILight : MonoBehaviour
 
     private void Start()
     {
-        redlight.SetActive(true);
-         greenlight.SetActive(false);
+        redlight.SetActive(true);  // setting the redlight on when the game starts 
+         greenlight.SetActive(false); // setting it off when the game starts 
     }
     private void OnEnable()
     {
         InputActions.JumpEventStarted += Turnon;
-        InputActions.JumpEventPreformed += Duration;
+        InputActions.JumpEventPreformed += Duration; //subbing to actions 
         InputActions.JumpEventCancled += Turnoff;
     }
 
@@ -29,19 +29,19 @@ public class ILight : MonoBehaviour
 
     private void Turnon()
     {
-        greenlight.SetActive(true);
+        greenlight.SetActive(true); // switching the lights 
         redlight.SetActive(false);
 
     }
 
     private void Turnoff()
     {
-        redlight.SetActive(true);
+        redlight.SetActive(true); //switching them one more then when space is let go
         greenlight.SetActive(false);
 
     }
 
-    private void Duration()
+    private void Duration() // didnt find a use for this yet
     {
 
     }

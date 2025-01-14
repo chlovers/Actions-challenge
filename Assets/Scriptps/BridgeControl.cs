@@ -8,22 +8,22 @@ public class BridgeControl : MonoBehaviour
 
     private void OnEnable()
     {
-        InputActions.BridgeUp += moveup;
+        InputActions.BridgeUp += moveup; //subbing to actions 
         InputActions.BridgeDown += movedown;
     }
 
     private void OnDisable()
     {
-        InputActions.BridgeUp -= moveup;
+        InputActions.BridgeUp -= moveup; //unsubbing to actions 
         InputActions.BridgeDown -= movedown;
     }
 
-    private void moveup()
+    private void moveup() // having the bridge move up when w is pressed
     {
         Bridge.transform.position = new Vector3(Bridge.transform.position.x, Bridge.transform.position.y + 1, Bridge.transform.position.z);
     }
 
-    private void movedown()
+    private void movedown() // having the bridge move down when S is pressed
     {
         transform.position = new Vector3(transform.position.x, transform.position.y- 1, transform.position.z);
     }
